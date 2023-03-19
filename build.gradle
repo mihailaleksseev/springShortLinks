@@ -16,6 +16,7 @@ configurations {
 
 repositories {
 	mavenCentral()
+	jcenter()
 }
 
 dependencies {
@@ -26,6 +27,7 @@ dependencies {
 
 	// Misc
 	implementation 'org.springdoc:springdoc-openapi-ui:1.6.4'
+	implementation 'net.swisstech:bitly-api-client:+'
 
 	implementation 'org.projectlombok:lombok:1.18.16'
 	annotationProcessor 'org.projectlombok:lombok:1.18.22'

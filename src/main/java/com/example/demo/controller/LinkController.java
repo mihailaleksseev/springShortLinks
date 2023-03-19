@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.demo.dto.LinkDto;
+import com.example.demo.dto.LinkRequestDto;
+import com.example.demo.dto.LinkResponseDto;
 import com.example.demo.service.LinkService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -29,9 +30,9 @@ public class LinkController {
         @ApiResponse(responseCode = "200", description = "Short link generated successfully"),
         @ApiResponse(responseCode = "400", description = "Bad request")
     })
-    @Operation(summary = "Create demo object")
+    @Operation(summary = "Generate short url")
     @PostMapping
-    public ResponseEntity<LinkDto> create(@Valid @RequestBody LinkDto dto) {
+    public ResponseEntity<LinkResponseDto> create(@Valid @RequestBody LinkRequestDto dto) {
         return ResponseEntity.status(HttpStatus.OK).body(
                 linkService.generate(dto)
         );
