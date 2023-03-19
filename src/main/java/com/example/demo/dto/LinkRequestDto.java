@@ -5,14 +5,18 @@ import io.swagger.v3.oas.annotations.media.Schema;
 
 import javax.validation.constraints.NotBlank;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class LinkDto {
+public class LinkRequestDto {
 
     @NotBlank
-    @Schema(description = "Link param description")
+    @Schema(description = "Full link")
     private String link;
 
 }
